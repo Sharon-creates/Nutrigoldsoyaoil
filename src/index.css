@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #fffbf3;
+    --foreground: #1c1917;
+    --primary: #f5a800;
+    --primary-dark: #e07800;
+    --accent: #2d7a4b;
+    --border: #e8d9b5;
+  }
+
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-gold {
+  background: rgba(245, 168, 0, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 168, 0, 0.25);
+}
+
+.glass-dark {
+  background: rgba(28, 25, 23, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.gold-shimmer-text {
+  background: linear-gradient(90deg, #e07800 0%, #f5a800 30%, #ffd060 50%, #f5a800 70%, #e07800 100%) 0 0 / 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: goldShimmer 4s linear infinite;
+}
+
+.card-hover {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 24px 48px -12px rgba(28, 25, 23, 0.12), 0 0 0 1px rgba(245, 168, 0, 0.3);
+}
+
+.btn-primary {
+  color: #1c1917;
+  background: linear-gradient(135deg, #f5a800 0%, #e07800 100%);
+  border-radius: 9999px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 20px rgba(245, 168, 0, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(245, 168, 0, 0.55);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-outline {
+  color: #1c1917;
+  background: transparent;
+  border: 2px solid #1c1917;
+  border-radius: 9999px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-outline:hover {
+  color: #fffbf3;
+  background: #1c1917;
+  transform: translateY(-2px);
+}
+
+.section-pad {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
