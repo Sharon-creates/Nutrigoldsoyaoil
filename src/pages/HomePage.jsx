@@ -294,7 +294,7 @@ export default function HomePage() {
             Ready to Cook Better?
           </h2>
           <p className="text-charcoal/80 text-lg max-w-xl mx-auto">
-            Join over 500,000 Nigerian families who trust Nutrigold every day for clean, non-greasy, healthy meals.
+            Trusted by Nigerian families who choose Nutrigold every day for clean, non-greasy, healthy meals.
           </p>
           <button
             onClick={() => navigate('products')}

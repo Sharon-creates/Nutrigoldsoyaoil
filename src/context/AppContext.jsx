@@ -6,9 +6,7 @@ const AppContext = createContext(null);
 export function AppProvider({ children }) {
   const [page, setPage] = useState('home');
   const [selectedProductId, setSelectedProductId] = useState('5l');
-  const [cartItems, setCartItems] = useState([
-    { productId: '5l', quantity: 1 }
-  ]);
+  const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);

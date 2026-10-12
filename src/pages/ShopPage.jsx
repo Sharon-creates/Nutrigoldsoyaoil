@@ -102,34 +102,7 @@ export default function ShopPage() {
         </div>
       )}
 
-      {/* Per Litre Value Comparison Guide */}
-      <div className="bg-ivory/60 p-8 rounded-3xl border border-border space-y-4">
-        <h3 className="font-display font-bold text-xl text-charcoal flex items-center gap-2">
-          <ShieldCheck className="w-5 h-5 text-green" /> Smart Shopper Per-Litre Guide
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs">
-          <div className="bg-white p-4 rounded-2xl border border-border">
-            <span className="font-bold text-charcoal block text-sm">1L Bottle</span>
-            <span className="text-amber font-extrabold text-lg block mt-1">₦1,500</span>
-            <span className="text-warm">Standard starter unit</span>
-          </div>
-          <div className="bg-white p-4 rounded-2xl border border-border">
-            <span className="font-bold text-charcoal block text-sm">3L Bottle</span>
-            <span className="text-amber font-extrabold text-lg block mt-1">₦1,400 / Litre</span>
-            <span className="text-green font-semibold">Save ₦300 overall</span>
-          </div>
-          <div className="bg-white p-4 rounded-2xl border border-border">
-            <span className="font-bold text-charcoal block text-sm">5L Jerry Can</span>
-            <span className="text-amber font-extrabold text-lg block mt-1">₦1,360 / Litre</span>
-            <span className="text-green font-semibold">Save ₦700 overall</span>
-          </div>
-          <div className="bg-white p-4 rounded-2xl border border-border bg-gold/10 border-gold">
-            <span className="font-bold text-charcoal block text-sm">25L Pro Jerry Can</span>
-            <span className="text-amber font-extrabold text-lg block mt-1">₦1,120 / Litre</span>
-            <span className="text-green font-bold">Best Commercial Value</span>
-          </div>
-        </div>
-      </div>
+
 
     </div>
   );

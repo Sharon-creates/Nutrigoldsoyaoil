@@ -5,7 +5,7 @@ import { searchMealDbRecipes } from '../services/recipeApi';
 import { ChefHat, Clock, Search, ArrowRight, Sparkles, Award, Globe, Loader2 } from 'lucide-react';
 
 export default function RecipesPage() {
-  const { setSelectedRecipe } = useApp();
+  const { setSelectedRecipe, navigate } = useApp();
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [apiRecipes, setApiRecipes] = useState([]);
@@ -76,17 +76,29 @@ export default function RecipesPage() {
   const combinedRecipes = [...filteredLocalRecipes, ...filteredApiRecipes];
 
   return (
-    <div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div className="pt-24 sm:pt-28 pb-16 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
       
+      {/* Top Navigation Bar with Back Button */}
+      <div className="flex items-center justify-between">
+        <button
+          onClick={() => navigate('home')}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-border text-charcoal hover:bg-gold/20 transition-all font-display font-semibold text-xs sm:text-sm shadow-sm active:scale-95"
+          aria-label="Back to Home"
+        >
+          <ArrowRight className="w-4 h-4 rotate-180 text-charcoal" />
+          <span>Back to Home</span>
+        </button>
+      </div>
+
       {/* Page Header */}
-      <div className="text-center max-w-3xl mx-auto space-y-4">
+      <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
         <span className="text-xs font-bold text-amber uppercase tracking-widest bg-gold/20 px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5">
           <ChefHat className="w-4 h-4 text-gold-dark" /> Kitchen Companion
         </span>
-        <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-charcoal tracking-tight">
+        <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-charcoal tracking-tight leading-tight">
           Nigerian & International Recipes
         </h1>
-        <p className="text-warm text-base leading-relaxed">
+        <p className="text-warm text-sm sm:text-base leading-relaxed px-2">
           Master authentic Nigerian delicacies and global favorites with step-by-step cooking guides, exact ingredient measurements, and recommended Nutrigold Soya Oil sizes.
         </p>
       </div>
@@ -128,7 +140,7 @@ export default function RecipesPage() {
 
       {/* Loading Skeleton State */}
       {isLoading && combinedRecipes.length === 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="bg-white rounded-3xl border border-border overflow-hidden h-96 animate-pulse">
               <div className="h-52 bg-ivory" />
@@ -142,7 +154,7 @@ export default function RecipesPage() {
         </div>
       ) : combinedRecipes.length > 0 ? (
         /* Recipes Grid */
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {combinedRecipes.map((recipe, idx) => (
             <div
               key={recipe.id || idx}
